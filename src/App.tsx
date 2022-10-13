@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import 'antd/dist/antd.css';
+import './view/Styles/styles.scss';
 
-function App() {
+import React, { memo, Suspense, useEffect } from 'react';
+import lodash from 'lodash';
+import { useNavigate } from 'react-router-dom';
+import PrivatePage from './routers/component/PrivatePage';
+import PublicPage from './routers/component/PublicPage';
+
+const MainView = memo(({ statusLogin }: { statusLogin: boolean }) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {statusLogin ? (
+        <Suspense fallback={<></>}>
+          <PrivatePage />
+        </Suspense>
+      ) : (
+        <Suspense fallback={<></>}>
+          <PublicPage />
+        </Suspense>
+      )}
+    </>
   );
-}
+});
+
+const App: React.FC = () => {
+  let token: any = null;
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!token) {
+      //   navigate('/login');
+    }
+  }, [token, navigate]);
+  return <MainView statusLogin={!lodash.isEmpty(token)} />;
+};
 
 export default App;

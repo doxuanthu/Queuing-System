@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'Nunito';
+  font-weight: normal;
+  font-display: swap;
+  src: local('Nunito Regular'), local('Nunito-Regular'),
+    url('../../shared/assets/font/Nunito/Nunito-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-weight: 500;
+  font-display: swap;
+  src: local('Nunito Medium'), local('Nunito-Medium'),
+    url('../../shared/assets/font/Nunito/Nunito-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-weight: 600;
+  font-display: swap;
+  src: local('Nunito Semi Bold'), local('Nunito-Semi-Bold'),
+    url('../../shared/assets/font/Nunito/Nunito-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-weight: bold;
+  font-display: swap;
+  src: local('Nunito Bold'), local('Nunito-Bold'),
+    url('../../shared/assets/font/Nunito/Nunito-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-weight: 900;
+  font-display: swap;
+  src: local('Nunito Black'), local('Nunito-Black'),
+    url('../../shared/assets/font/Nunito/Nunito-Black.ttf') format('truetype');
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  font-weight: normal;
+  font-family: $main-font;
+  line-height: normal;
+}
+
+div#root {
+  height: 100%;
+  overflow: hidden;
+  width: 100vw;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  transition: 0.2s;
+}
